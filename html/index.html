@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type"content="text/html; charset=utf-8"/>
+	<meta content="SVGSecret,SVG解密,SVG奇淫巧计,SVG妙用,SVG图形"name="Keywords">
+	<meta content="使用SVG实现各类图形"name="description">
+	<title>SVG奇思妙想</title>
+	<link rel="stylesheet"type="text/css"href="../static/css/reset.css">
+	<link rel="stylesheet"type="text/css"href="../static/css/index.css"></head>
+	<style>
+	#cnzz_stat_icon_1259441963 {
+		display: block;
+		width: 0;
+		height: 0;
+		overflow: hidden;
+	}
+</style>
+<body>
+	<h1 style="height: 0;overflow: hidden;">SVG奇思妙想，使用SVG实现各类图形</h1>
+	<a style="width:149px;height:149px;position:fixed;top:0;right:0;z-index:9999;"href="https://github.com/chokcoco/magicCss"target="_blank">
+		<img src="http://chokcoco.github.io/demo/curveJS/images/forkme.png"></a>
+	<div class="container">
+		<!-- circle-->
+		<section id="circle"class="code-wrap cf">
+			<div class="css-live-wrap">
+				<summary>圆形</summary>
+				<hgroup class="circle">
+					<svg class="circle-svg">
+						<circle cx="100"cy="100"r="100"stroke="#D1D3D7"fill="none"></circle>
+					</svg>
+				</hgroup>
+			</div>
+			<style class="code" contenteditable=true>
+			.circle {
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background-color: deeppink;
+				-webkit-clip-path: circle(100px at 100px 100px);
+				clip-path: circle(100px at 100px 100px);
+			}
+			.circle-svg {
+				width: 0;
+				height: 0;
+			}
+			</style>
+		</section>
+
+		<!-- polygon-->
+		<section id="polygon"class="code-wrap cf">
+			<div class="css-live-wrap">
+				<summary>SVG多边形</summary>
+				<summary>hover、active 可变换效果</summary>
+				<hgroup class="polygon">
+					<svg class="polygon-svg">
+						<defs>
+							<clipPath id="clip-svg-demo"clipPathUnits="objectBoundingBox">
+								<polygon points="0.25 0, 0.75 0, 1 0.5, 0.75 1, 0.25 1, 0 0.5"/>
+							</clipPath>
+						</defs>
+					</svg>
+				</hgroup>
+			</div>
+			<style class="code" contenteditable=true>
+			.polygon {
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background-color: darksalmon;
+				transition:.3s;
+				-webkit-clip-path: polygon(33% 0%, 66% 0%, 100% 50%, 66% 100%, 33% 100%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+				clip-path: polygon(33% 0%, 66% 0%, 100% 50%, 66% 100%, 33% 100%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+			}
+			.polygon:hover{
+				background-color: aquamarine;
+				-webkit-clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+				clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+			}
+			.polygon:active{
+				background-color: darkmagenta;
+				-webkit-clip-path: polygon(50% 0%,50% 0%,50% 0%,50% 0%,50% 0%,50% 0%,50% 0%, 0% 100%, 100% 100%);
+				clip-path: polygon(50% 0%,50% 0%,50% 0%,50% 0%,50% 0%,50% 0%,50% 0%, 0% 100%, 100% 100%);
+			}
+			.polygon-svg {
+				width: 0;
+				height: 0;
+			}
+			</style>
+		</section>
+
+		<!-- arrow -->
+		<section id="arrow"class="code-wrap cf">
+			<div class="css-live-wrap">
+				<summary>气泡对话框</summary>
+				<hgroup class="arrow">
+					<svg class="arrow-svg">
+					</svg>
+				</hgroup>
+			</div>
+			<style class="code" contenteditable=true>
+			.arrow {
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background-color: darkorchid;
+				-webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+				clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+				filter:drop-shadow(2px 2px 2px #333);
+				-webkit-filter:drop-shadow(2px 2px 2px #333);
+			}
+			.arrow-svg {
+				width: 0;
+				height: 0;
+			}
+			</style>
+		</section>
+	</div>
+	<script type="text/javascript">
+		var cnzz_protocol = (("https: " == document.location.protocol) ? " https://":" http://");
+		document.write(unescape("%3Cspan id='cnzz_stat_icon_1259441963'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1259441963'type='text/javascript'%3E%3C/script%3E"));
+	</script>
+</body>
+</html>
