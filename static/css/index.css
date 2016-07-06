@@ -43,7 +43,7 @@ summary{
   border-left: 2px solid #FF9800;
   padding: 0 10px;
   text-shadow: 0 0.2px hsl(0,0%,85%);
-  background: linear-gradient(#FF9800, #FF9800) no-repeat;
+  /* background: linear-gradient(#FF9800, #FF9800) no-repeat; */
   background-size: 100% 1px;
   background-position: -400px bottom;
   transition:.5s;
@@ -53,6 +53,7 @@ summary:nth-child(2){
   margin-top:60px;
 }
 
-summary:hover{
-  background-position: -0em bottom;
+summary:nth-child(3){
+  margin-top:100px;
 }
+
