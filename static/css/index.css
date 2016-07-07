@@ -1,6 +1,27 @@
 .container{
   width: 100%;
   position: relative;
+  z-index:100;
+}
+#tips{
+  display:none;
+  width:470px;
+  height:60px;
+  position:fixed;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  margin:auto;
+  padding:50px;
+  font-size:24px;
+  background-color:#fff;
+  color:#333;
+  border:5px solid deeppink;
+  z-index:9999;
+  cursor:pointer;
+  box-shadow:0 0 0 1000px rgba(0,0,0,.5);
+  text-align:center;
 }
 .code-wrap{
   width: 100%;
@@ -29,7 +50,7 @@
   font-family: Consolas, Monaco, monospace;
   white-space: pre;
   color:#333;
-  text-shadow: 0 1px 1px white;
+  /* text-shadow: 0 1px 1px white; */
   overflow-y:scroll;
 }
 summary{

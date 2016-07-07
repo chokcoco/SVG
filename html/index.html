@@ -6,8 +6,7 @@
 	<meta content="使用SVG实现各类图形" name="description">
 	<title>SVG奇思妙想</title>
 	<link rel="stylesheet" type="text/css" href="../static/css/reset.css">
-	<link rel="stylesheet" type="text/css" href="../static/css/index.css">
-</head>
+	<link rel="stylesheet" type="text/css" href="../static/css/index.css"></head>
 	<style>
 	#cnzz_stat_icon_1259441963 {
 		display: block;
@@ -20,17 +19,14 @@
 <body>
 	<h1 style="height: 0;overflow: hidden;">SVG奇思妙想，使用SVG实现各类图形</h1>
 	<a style="width:149px;height:149px;position:fixed;top:0;right:0;z-index:9999;" href="https://github.com/chokcoco/svg" target="_blank">
-		<img src="http://chokcoco.github.io/demo/curveJS/images/forkme.png">
-	</a>
+		<img src="http://chokcoco.github.io/demo/curveJS/images/forkme.png"></a>
 	<div class="container">
 		<!-- circle-->
 		<section id="circle" class="code-wrap cf">
 			<div class="css-live-wrap">
 				<summary>圆形</summary>
 				<hgroup class="circle">
-					<svg class="circle-svg">
-						<circle cx="100" cy="100" r="100" stroke="#D1D3D7" fill="none"></circle>
-					</svg>
+					<svg class="circle-svg"></svg>
 				</hgroup>
 			</div>
 			<style class="code" contenteditable="true">
@@ -42,7 +38,7 @@
 				left: 50%;
 				transform: translate(-50%, -50%);
 				background-color: deeppink;
-				-webkit-clip-path: circle(100px at 100px 100px);
+				clip-path: circle(100px at 100px 100px);
 				clip-path: circle(100px at 100px 100px);
 			}
 			.circle-svg {
@@ -274,6 +270,112 @@
 			</style>
 		</section>
 
+		<!-- star -->
+		<section id="triangle2rect" class="code-wrap cf">
+			<div class="css-live-wrap">
+				<summary>triangle2rect</summary>
+				<summary>clip-path 图形</summary>
+				<hgroup class="triangle2rect">
+					<div class="a"></div>
+					<div class="b"></div>
+					<div class="c"></div>
+					<div class="d"></div>
+				</hgroup>
+			</div>
+			<style class="code" contenteditable="true">
+			.triangle2rect {
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				-webkit-animation:aniContainer 2s infinite alternate;
+			}
+			.triangle2rect div{
+			  position:absolute;
+			  top:0;
+			  left:0;
+			  width:100%;
+			  height:100%;
+			}
+			.a{
+			  background:deeppink;
+			  -webkit-clip-path: polygon(0% 0%, 0% 100%, 50% 50%);
+			  animation:a 2s infinite alternate;
+			  -webkit-animation:a 2s infinite alternate;
+			}
+			.b{
+			  background:deeppink;
+			  -webkit-clip-path: polygon(0% 0%, 100% 0%, 50% 50%);
+			  animation:b 2s infinite alternate;
+			  -webkit-animation:b 2s infinite alternate;
+			}
+			.c{
+			  background:deeppink;
+			  -webkit-clip-path: polygon(100% 0%, 100% 100%, 50% 50%);
+			  animation:c 2s infinite alternate;
+			  -webkit-animation:c 2s infinite alternate;
+			}
+			.d{
+			  background:deeppink;
+			  -webkit-clip-path: polygon(100% 100%, 0% 100%, 50% 50%);
+			  animation:d 2s infinite alternate;
+			  -webkit-animation:d 2s infinite alternate;
+			}
+			@-webkit-keyframes a{
+			  0%,10%{
+			    background:deeppink;
+			    -webkit-clip-path: polygon(0% 0%, 0% 100%, 50% 50%);
+			  }
+			  90%,100%{
+			    background:#069;
+			    -webkit-clip-path: polygon(0% 100%, 25% 100%, 12.5% 0%);
+			  }
+			}
+			@-webkit-keyframes b{
+			  0%,10%{
+			    background:deeppink;
+			    -webkit-clip-path: polygon(0% 0%, 100% 0%, 50% 50%);
+			  }
+			  90%,100%{
+			    background:#095;
+			    -webkit-clip-path: polygon(25% 0%, 50%  0%,37.5% 100%);
+			  }
+			}
+			@-webkit-keyframes c{
+			  0%,10%{
+			    background:deeppink;
+			    -webkit-clip-path: polygon(100% 0%, 100% 100%, 50% 50%);
+			  }
+			  90%,100%{
+			    background:#f80;
+			    -webkit-clip-path: polygon(62.5% 0%,75% 100%,50% 100%);
+			  }
+			}
+			@-webkit-keyframes d{
+			  0%,10%{
+			    background:deeppink;
+			    -webkit-clip-path: polygon(100% 100%, 0% 100%, 50% 50%);
+			  }
+			  90%,100%{
+			    background:#f69;
+			    -webkit-clip-path: polygon(100% 0%,87.5% 100%, 75% 0%);
+			  }
+			}
+			@-webkit-keyframes aniContainer{
+			  0%,10%{
+			    width:100px;
+			    height:100px;
+			  }
+			  90%,100%{
+			    width:250px;
+			    height:60px;
+			  }
+			}
+			</style>
+		</section>
+
 		<!-- 使用 SVG PATH 绘制的矩形 -->
 		<section id="circle-load-rect" class="code-wrap cf">
 			<div class="css-live-wrap">
@@ -345,6 +447,47 @@
 			</style>
 		</section>
 
+		<!-- 使用 SVG PATH 绘制平滑曲线，用于文字效果 -->
+		<section id="circle-word" class="code-wrap cf">
+			<div class="css-live-wrap">
+				<summary>使用 SVG PATH 绘制平滑曲线，用于文字效果</summary>
+				<summary>使用审查元素看看 html 结构，绘画内容在 svg 标签内</summary>
+				<summary>可以让文字跟随 SVG 路径做出各种形状</summary>
+				<hgroup class="circle-word">
+					<svg width="400px" height="300px" viewBox="0 0 400 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+						<defs>
+							<path id="textCircle" d="M 20 100 A 80 80 0 0 0 180 100 A 80 80 0 0 0 20 100" fill="none" stroke="#333" />
+							<path id="textCircle2" d="M220 100 C 353 9, 245 190, 389 86" fill="none" stroke="black"/>
+						</defs>
+						<text class="textCircle" fill="yellowgreen">
+							<textPath xlink:href="#textCircle">这是一段随着path路径绘制的文字</textPath>
+						</text>
+						<text class="textCircle2" fill="deeppink">
+							<textPath xlink:href="#textCircle2">这是另一段随path路径绘制的文字</textPath>
+						</text>
+					</svg>
+				</hgroup>
+			</div>
+			<style class="code" contenteditable="true">
+			.circle-word {
+				position: absolute;
+				width: 400px;
+				height: 200px;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			.textCircle{
+				font-size:20px;
+				letter-spacing:4px;
+			}
+			.textCircle2{
+				font-size:12px;
+				letter-spacing:1px;
+			}
+			</style>
+		</section>
+
 		<!-- 使用 SVG PATH 绘制扇形 -->
 		<section id="circle-load-a" class="code-wrap cf">
 			<div class="css-live-wrap">
@@ -410,10 +553,27 @@
 			</style>
 		</section>
 	</div>
-
+	<div id="tips">
+		因部分图案使用 clip-path，兼容性不佳，建议使用高版本 Chrome 内核浏览器观看。
+	</div>
 	<script type="text/javascript">
 		var cnzz_protocol = (("https: " == document.location.protocol) ? " https://":" http://");
 		document.write(unescape("%3Cspan id='cnzz_stat_icon_1259441963'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1259441963'type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+		var
+			elem = document.getElementById('tips'),
+			ngua = navigator.userAgent,
+			reg = /webkit|chrome|safari/gi,
+			isW = reg.test(ngua);
+
+		if(!isW){
+			elem.style.display="block";
+
+			elem.addEventListener('click',function(){
+				this.style.display="none";
+			});
+		}
 	</script>
 </body>
 </html>
