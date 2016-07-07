@@ -26,7 +26,7 @@
 			<div class="css-live-wrap">
 				<summary>圆形</summary>
 				<hgroup class="circle">
-					<svg class="circle-svg"></svg>
+					<!-- <svg class="circle-svg"></svg> -->
 				</hgroup>
 			</div>
 			<style class="code" contenteditable="true">
@@ -38,8 +38,7 @@
 				left: 50%;
 				transform: translate(-50%, -50%);
 				background-color: deeppink;
-				clip-path: circle(100px at 100px 100px);
-				clip-path: circle(100px at 100px 100px);
+				-webkit-clip-path: circle(100px at 100px 100px);
 			}
 			.circle-svg {
 				width: 0;
@@ -524,6 +523,7 @@
 			}
 			</style>
 			<script class="jscode" contenteditable="true">
+
 			var
 				randomDeg = 0,
 				// 动画时间
