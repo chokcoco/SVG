@@ -38,7 +38,7 @@
   float:left;
 }
 
-.code{
+.code,.jscode{
   width: 50%;
   height:100%;
   box-sizing: border-box;

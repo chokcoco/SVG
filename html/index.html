@@ -488,21 +488,21 @@
 			</style>
 		</section>
 
-		<!-- 使用 SVG PATH 绘制扇形 -->
+		<!-- 使用 SVG PATH 绘制饼图 -->
 		<section id="circle-load-a" class="code-wrap cf">
 			<div class="css-live-wrap">
-				<summary>使用 SVG PATH 绘制扇形</summary>
+				<summary>使用 SVG PATH 绘制饼图</summary>
 				<summary>使用审查元素看看 html 结构，绘画内容在 svg 标签内</summary>
-				<summary>本曲线使用弧形曲线生成</summary>
-				<hgroup class="circle-load-a">
+				<summary>点击饼图查看动画过渡效果！</summary>
+				<hgroup class="circle-load-a" id='pieCon' style="cursor:pointer">
+					<div id="pie-number">75%</div>
 					<svg width="200px" height="200px" version="1.1" xmlns="http://www.w3.org/2000/svg">
-						<path d="M80 80
-	           A 45 45, 0, 0, 0, 125 125
-	           L 125 80 Z" class="circle-load-a-svg"/>
+						<circle cx="100" cy="100" r="50" fill="#E7E9ED" ></circle>
+						<path d="M100 100,L100 150,A50 50 0 1 1 150 100,Z" fill="rgba(54, 162, 235, .8)" id="pie" stroke="#fff"; stroke-width"5";/>
 					</svg>
 				</hgroup>
 			</div>
-			<style class="code" contenteditable="true">
+			<style class="" contenteditable="true">
 			.circle-load-a {
 				position: absolute;
 				width: 200px;
@@ -511,12 +511,95 @@
 				left: 50%;
 				transform: translate(-50%, -50%)  scale(2);
 			}
-			.circle-load-a-svg {
-				fill: deeppink;
-				stroke: #666;
-				stroke-width: 1px;
+			#pie-number{
+				font-size:24px;
+				color:#fff;
+				width:200px;
+				position:absolute;
+				top:0;
+				left:0;
+				line-height:200px;
+				text-align:center;
+				text-shadow:0 0 2px #999;
 			}
 			</style>
+			<script class="jscode" contenteditable="true">
+			var
+				randomDeg = 0,
+				// 动画时间
+				t = 2000,
+				// 每帧偏移量
+				eachDeg = 0,
+				// 初始值
+				startDeg = 0,
+				// 初始时间
+				startTime = null,
+				// 动画锁
+				isLock = 0,
+				// 饼图比例
+				numberElem = document.getElementById('pie-number');
+
+			// 逐帧动画
+			function pieMove(){
+				var pie = document.getElementById('pie'),
+					startAngle = 0,
+					cx = 100,
+					cy = 100,
+					r = 50,
+					isLarge = 0,
+					isOver180 = 0,
+					deg = startDeg,
+					x0 = cx+r*Math.cos(startAngle*Math.PI/180),
+					y0 = cy-r*Math.sin(startAngle*Math.PI/180),
+					x1 = cx+r*Math.cos(deg*Math.PI/180),
+					y1 = cy-r*Math.sin(deg*Math.PI/180);
+
+				console.log('deg x0 y0 x1 y1 ',deg,x0,y0,x1,y1);
+
+				if(deg > 180){
+					isOver180 = 1;
+					isLarge = 0;
+				}
+
+				pie.setAttribute("d", "M "+cx+","+cy+" L "+x0+","+y0+" A "+r+" "+r+" 0 "+ isOver180 +" "+ isLarge + " " +x1+","+y1+" Z");
+
+				numberElem.innerText = (parseInt(deg / 360 * 10000) / 100) + "%";
+
+				startDeg += eachDeg;
+
+				if(new Date() - startTime <= t){
+					requestAnimationFrame(pieMove);
+				}else{
+					isLock = 0;
+				}
+			}
+
+			function initClick(){
+				// 动画运行期间无法点击
+				if(!isLock){
+					// 动画锁
+					isLock = 1;
+					// 随机角度
+					randomDeg = Math.random()*360,
+					// 动画时间
+					t = 2000,
+					// 每帧偏移量 = 2000 / ( 1000 / 60 ) = 120
+					eachDeg = randomDeg / 120,
+					// 初始值
+					startDeg = eachDeg,
+					// 初始时间
+					startTime = new Date();
+
+					requestAnimationFrame(pieMove);
+				}
+			}
+
+			// 点击监听
+			document.getElementById('pieCon').addEventListener('click',initClick);
+
+			initClick();
+
+			</script>
 		</section>
 
 		<!-- 使用 SVG 绘制 loading 图 -->
