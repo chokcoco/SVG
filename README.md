@@ -1,5 +1,5 @@
 # SVG 奇思妙想 
-使用 `SVG` 标签或是CSS `clip-path` 创建的图形
+使用 `SVG` 标签或是CSS属性 `clip-path` 创建的图形
 
 | Demo link | Description |
 | ------| ------ | 
