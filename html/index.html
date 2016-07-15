@@ -575,6 +575,40 @@
 			</style>
 		</section>
 
+		<!-- 使用 SVG 绘制 loading 图 -->
+		<section id="circle-load" class="code-wrap cf">
+			<div class="css-live-wrap">
+				<summary>使用 SVG 绘制 loading 图</summary>
+				<summary>使用审查元素看看 html 结构，绘画内容在 svg 标签内</summary>
+				<hgroup class="circle-load">
+					<svg width="240px" height="240px" version="1.1" xmlns="http://www.w3.org/2000/svg">
+						<circle cx="110" cy="110" r="90" stroke-width="20" stroke="gainsboro" fill="none"></circle>
+						<circle cx="110" cy="110" r="90" stroke-width="20" stroke="darkturquoise" fill="none" class='circle-load-svg'></circle>
+					</svg>
+				</hgroup>
+			</div>
+			<style class="code" contenteditable="true">
+			.circle-load {
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			.circle-load-svg {
+				stroke-dasharray: 0 570;
+				animation:rot 8s linear infinite;
+			}
+
+			@keyframes rot{
+				100%{
+					stroke-dasharray: 570 570;
+				}
+			}
+			</style>
+		</section>
+
 		<!-- 使用 SVG PATH 绘制饼图 -->
 		<section id="circle-load-a" class="code-wrap cf">
 			<div class="css-live-wrap">
@@ -612,98 +646,114 @@
 			</style>
 			<script class="jscode" contenteditable="true">
 
-			var
-				randomDeg = 0,
-				// 动画时间
-				t = 2000,
-				// 每帧偏移量
-				eachDeg = 0,
-				// 初始值
-				startDeg = 0,
-				// 初始时间
-				startTime = null,
-				// 动画锁
-				isLock = 0,
-				// 饼图比例
-				numberElem = document.getElementById('pie-number');
+      var
+        randomDeg = 0,
+        // 动画时间
+        t = 2000,
+        // 每帧偏移量
+        eachDeg = 0,
+        // 初始值
+        startDeg = 0,
+        // 初始时间
+        startTime = null,
+        // 动画锁
+        isLock = 0,
+        // 饼图比例
+        numberElem = document.getElementById('pie-number');
 
-			// 逐帧动画
-			function pieMove(){
-				var pie = document.getElementById('pie'),
-					startAngle = 0,
-					cx = 100,
-					cy = 100,
-					r = 50,
-					isLarge = 0,
-					isOver180 = 0,
-					deg = startDeg,
-					x0 = cx+r*Math.cos(startAngle*Math.PI/180),
-					y0 = cy-r*Math.sin(startAngle*Math.PI/180),
-					x1 = cx+r*Math.cos(deg*Math.PI/180),
-					y1 = cy-r*Math.sin(deg*Math.PI/180);
+      // 逐帧动画
+      function pieMove() {
+        var pie = document.getElementById('pie'),
+          startAngle = 0,
+          cx = 100,
+          cy = 100,
+          r = 50,
+          isLarge = 0,
+          isOver180 = 0,
+          deg = startDeg,
+          x0 = cx + r * Math.cos(startAngle * Math.PI / 180),
+          y0 = cy - r * Math.sin(startAngle * Math.PI / 180),
+          x1 = cx + r * Math.cos(deg * Math.PI / 180),
+          y1 = cy - r * Math.sin(deg * Math.PI / 180);
 
-				console.log('deg x0 y0 x1 y1 ',deg,x0,y0,x1,y1);
+        // console.log('deg x0 y0 x1 y1 ',deg,x0,y0,x1,y1);
 
-				if(deg > 180){
-					isOver180 = 1;
-					isLarge = 0;
-				}
+        if (deg > 180) {
+          isOver180 = 1;
+          isLarge = 0;
+        }
 
-				pie.setAttribute("d", "M "+cx+","+cy+" L "+x0+","+y0+" A "+r+" "+r+" 0 "+ isOver180 +" "+ isLarge + " " +x1+","+y1+" Z");
+        pie.setAttribute("d", "M " + cx + "," + cy + " L " + x0 + "," + y0 + " A " + r + " " + r + " 0 " + isOver180 + " " + isLarge + " " + x1 + "," + y1 + " Z");
 
-				numberElem.innerText = (parseInt(deg / 360 * 10000) / 100) + "%";
+        numberElem.innerText = (parseInt(deg / 360 * 10000) / 100) + "%";
 
-				startDeg += eachDeg;
+        startDeg += eachDeg;
 
-				if(new Date() - startTime <= t){
-					requestAnimationFrame(pieMove);
-				}else{
-					isLock = 0;
-				}
-			}
+        if (new Date() - startTime <= t) {
+          requestAnimationFrame(pieMove);
+        } else {
+          isLock = 0;
+        }
+      }
 
-			function initClick(){
-				// 动画运行期间无法点击
-				if(!isLock){
-					// 动画锁
-					isLock = 1;
-					// 随机角度
-					randomDeg = Math.random()*360,
-					// 动画时间
-					t = 2000,
-					// 每帧偏移量 = 2000 / ( 1000 / 60 ) = 120
-					eachDeg = randomDeg / 120,
-					// 初始值
-					startDeg = eachDeg,
-					// 初始时间
-					startTime = new Date();
+      function initClick() {
+        // 动画运行期间无法点击
+        if (!isLock) {
+          // 动画锁
+          isLock = 1;
+          // 随机角度
+          randomDeg = Math.random() * 360,
+            // 动画时间
+            t = 2000,
+            // 每帧偏移量 = 2000 / ( 1000 / 60 ) = 120
+            eachDeg = randomDeg / 120,
+            // 初始值
+            startDeg = eachDeg,
+            // 初始时间
+            startTime = new Date();
 
-					requestAnimationFrame(pieMove);
-				}
-			}
+          requestAnimationFrame(pieMove);
+        }
+      }
 
-			// 点击监听
-			document.getElementById('pieCon').addEventListener('click',initClick);
+      // 点击监听
+      document.getElementById('pieCon').addEventListener('click', initClick);
 
-			initClick();
+      initClick();
 
 			</script>
 		</section>
 
-		<!-- 使用 SVG 绘制 loading 图 -->
-		<section id="circle-load" class="code-wrap cf">
+		<!-- 使用 SVG 绘制百分比图 -->
+		<section id="percentage-pie" class="code-wrap cf">
 			<div class="css-live-wrap">
-				<summary>使用 SVG 绘制 loading 图</summary>
+				<summary>使用 SVG 绘制百分比图</summary>
 				<summary>使用审查元素看看 html 结构，绘画内容在 svg 标签内</summary>
-				<hgroup class="circle-load">
-					<svg width="240px" height="240px" version="1.1" xmlns="http://www.w3.org/2000/svg">
-						<circle cx="110" cy="110" r="90" stroke-width="20" stroke="gainsboro" fill="none"></circle>
-						<circle cx="110" cy="110" r="90" stroke-width="20" stroke="darkturquoise" fill="none" class='circle-load-svg'></circle>
+				<summary>使用了 SVG 动画 animate</summary>
+				<hgroup class="percentage-pie">
+					<svg width="200px" height="200px" version="1.1" xmlns="http://www.w3.org/2000/svg">
+						<text class="liquidFillGaugeText" text-anchor="middle" font-size="42px" transform="translate(100,120)" style="fill: #000">50.0%</text>
+						<!-- Wave -->
+						<g id="wave">
+							<path id="wave-2"
+										fill="rgba(255, 20, 147, .5)"
+										d="M0 100 C90 28, 92 179, 200 100 A95 95 0 0 1 0 100 Z" >
+							<animate dur="5s"
+										repeatCount="indefinite"
+										attributeName="d"
+										attributeType="XML"
+										values="M0 100 C90 28, 92 179, 200 100 A95 95 0 0 1 0 100 Z;
+														M0 100 C145 100, 41 100, 200 100 A95 95 0 0 1 0 100 Z;
+														M0 100 C90 28, 92 179, 200 100 A95 95 0 0 1 0 100 Z" />
+							</path>
+						</g>
+						<circle cx="100" cy="100" r="80" stroke-width="10" stroke="white" fill="transparent"></circle>
+						<circle cx="100" cy="100" r="90" stroke-width="20" stroke="deeppink" fill="none" class='percentage-pie-svg'></circle>
 					</svg>
 				</hgroup>
 			</div>
 			<style class="code" contenteditable="true">
-			.circle-load {
+			.percentage-pie {
 				position: absolute;
 				width: 200px;
 				height: 200px;
@@ -711,19 +761,111 @@
 				left: 50%;
 				transform: translate(-50%, -50%);
 			}
-			.circle-load-svg {
-				stroke-dasharray: 100 570;
-				animation:rot 8s linear infinite;
-			}
-
-			@keyframes rot{
-				100%{
-					stroke-dasharray: 570 570;
-				}
-			}
 			</style>
 		</section>
+
+		<!-- 使用 SVG 绘制百分比图 -->
+		<section id="percentage-pie2" class="code-wrap cf">
+			<div class="css-live-wrap">
+				<summary>使用 SVG 绘制可调节数值百分比图</summary>
+				<summary>使用审查元素看看 html 结构，绘画内容在 svg 标签内</summary>
+				<summary>使用原生JS控制svg百分比，并生成动画(未完成)</summary>
+				<hgroup class="percentage-pie2">
+					<svg width="200px" height="200px" version="1.1" xmlns="http://www.w3.org/2000/svg">
+						<!-- <text class="liquidFillGaugeText" text-anchor="middle" font-size="42px" transform="translate(100,120)" style="fill: #000">50.0%</text> -->
+						<!-- Wave -->
+						<path id="wave-2"
+									fill="rgb(170, 125, 57)"
+									d="M5 100 C90 28, 92 179, 195 100 A95 95 0 0 1 5 100 Z" transform="translate(0,0)">
+									<!-- d="M5 100 C90 28, 92 179, 195 100 A95 95 0 0 1 5 100 Z" > -->
+							<animate dur="5s"
+									repeatCount="indefinite"
+									attributeName="d"
+									attributeType="XML"
+									values="M5 100 C90 28, 92 179, 195 100 A95 95 0 0 1 5 100 Z;
+													M12.868617831145684 147.74344 C 67.6228726103819 127.74343999999999 , 122.37712738961812 167.74344 , 177.13138216885432 147.74344 A 95 95 0 0 1 12.868617831145684 147.74344 Z;
+													M5 100 C90 28, 92 179, 195 100 A95 95 0 0 1 5 100 Z" />
+						</path>
+
+						<circle cx="100" cy="100" r="90" stroke-width="20" stroke="white" fill="transparent"></circle>
+						<circle cx="100" cy="100" r="90" stroke-width="10" stroke="rgb(212, 171, 106)" fill="none" class='percentage-pie2-svg'></circle>
+					</svg>
+				</hgroup>
+			</div>
+			<style class="code" contenteditable="true" style="display:none">
+			.percentage-pie2 {
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			</style>
+			<script class="jscode" contenteditable="true">
+      var
+      // 圆半径
+        r = 95,
+        // 圆心 x
+        cx = 100,
+        // 圆心 y
+        cy = 100;
+
+      /**
+       * 圆的标准方程
+       * (x－a)²+(y－b)²=r²
+       * 已经 r 、y 求 x
+       * x1 = Math.sqrt(r^2 - (y - cy)^2) + 95
+       * x2 = Math.sqrt(r^2 - (y - cy)^2) - 95
+       * @return {[type]} [description]
+       */
+
+      var randomY = ~~(Math.random() * 19000) / 100,
+        // 初始Y值
+        startY = 100,
+        // 与原距离差值
+        offsetY = startY - randomY,
+        // 运动时间
+        duration = 2000,
+        // 当前时间
+        startTime = new Date(),
+        // svg elem
+        svgElem = document.getElementById('wave-2');
+
+      console.log(svgElem);
+      console.log('randomY', randomY);
+      console.log('offsetY', offsetY);
+      requestAnimationFrame(function waveAni() {
+        // 当前时间线
+        var t = Math.min(1, (Date.now() - startTime) / duration);
+
+        randomY = startY + (t * offsetY);
+
+        var x1 = Math.sqrt(95 * 95 - (randomY - 100) * (randomY - 100)) + 95,
+          x2 = 95 - Math.sqrt(95 * 95 - (randomY - 100) * (randomY - 100)),
+          xGap = (x1 - x2) / 3,
+          yGap = 20;
+
+        // console.log('t',t);
+        // console.log('randomY',randomY);
+        // console.log('x1 x2',x1,x2);
+        // console.log('xGap',xGap);
+        // console.log('yGap',yGap);
+
+        // 动画移动路径
+        // console.log('M',x2,randomY,'C',x2+xGap,randomY-yGap,',',x2+xGap+xGap,randomY+yGap,',',x1,randomY,'A',r,r,'0 0 1',x2,randomY,'Z');
+        var path = 'M ' + x2 + ' ' + randomY + ' C ' + (x2 + xGap) + ' ' + (randomY - yGap) + ' , ' + (x2 + xGap + xGap) + ' ' + (randomY + yGap) + ' , ' + x1 + ' ' + randomY + ' A ' + r + ' ' + r + ' ' + '0 0 1' + ' ' + x2 + ' ' + randomY + ' Z';
+        console.log(path);
+
+        // 无法控制，另寻他法中
+        // svgElem.setAttribute('d', path);
+
+        if (t < 1.0) requestAnimationFrame(waveAni);
+      })
+			</script>
+		</section>
 	</div>
+
 	<div id="tips">
 		因部分图案使用 clip-path，兼容性不佳，建议使用高版本 Chrome 内核浏览器观看。
 	</div>
