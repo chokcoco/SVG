@@ -10,5 +10,16 @@
 
 ## 使用`svg` 绘制各类统计图形
 
+使用 svg 标签绘制各类百分比图、饼图、loading 图。
+
+#### loading 图
+[loading 图](https://github.com/chokcoco/SVG/upload/master/static/images/1.gif)
+
+#### 饼图
+[饼图](https://github.com/chokcoco/SVG/upload/master/static/images/2.gif)
+
+#### 百分比图
+[百分比图](https://github.com/chokcoco/SVG/upload/master/static/images/3.gif)
+
 ## License
 MIT
