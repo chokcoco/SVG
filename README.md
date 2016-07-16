@@ -8,5 +8,7 @@
 
 由于部分图形使用了 `clip-path` ，兼容性问题，请使用 Chrome 浏览器浏览。
 
+## 使用`svg` 绘制各类统计图形
+
 ## License
 MIT
