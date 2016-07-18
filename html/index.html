@@ -30,20 +30,20 @@
 				</hgroup>
 			</div>
 			<style class="code" contenteditable="true">
-			.circle {
-				position: absolute;
-				width: 200px;
-				height: 200px;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				background-color: deeppink;
-				-webkit-clip-path: circle(100px at 100px 100px);
-			}
-			.circle-svg {
-				width: 0;
-				height: 0;
-			}
+      .circle {
+      	position: absolute;
+      	width: 200px;
+      	height: 200px;
+      	top: 50%;
+      	left: 50%;
+      	transform: translate(-50%, -50%);
+      	background-color: deeppink;
+      	-webkit-clip-path: circle(100px at 100px 100px);
+      }
+      .circle-svg {
+      	width: 0;
+      	height: 0;
+      }
 			</style>
 		</section>
 
@@ -63,32 +63,32 @@
 				</hgroup>
 			</div>
 			<style class="code" contenteditable="true" >
-			.polygon {
-				position: absolute;
-				width: 200px;
-				height: 200px;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				background-color: darksalmon;
-				transition:.3s;
-				-webkit-clip-path: polygon(33% 0%, 66% 0%, 100% 50%, 66% 100%, 33% 100%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
-				clip-path: polygon(33% 0%, 66% 0%, 100% 50%, 66% 100%, 33% 100%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
-			}
-			.polygon:hover{
-				background-color: aquamarine;
-				-webkit-clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
-				clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
-			}
-			.polygon:active{
-				background-color: darkmagenta;
-				-webkit-clip-path: polygon(50% 0%,50% 0%,50% 0%,50% 0%,50% 0%,50% 0%,50% 0%, 0% 100%, 100% 100%);
-				clip-path: polygon(50% 0%,50% 0%,50% 0%,50% 0%,50% 0%,50% 0%,50% 0%, 0% 100%, 100% 100%);
-			}
-			.polygon-svg {
-				width: 0;
-				height: 0;
-			}
+      .polygon {
+      	position: absolute;
+      	width: 200px;
+      	height: 200px;
+      	top: 50%;
+      	left: 50%;
+      	transform: translate(-50%, -50%);
+      	background-color: darksalmon;
+      	transition:.3s;
+      	-webkit-clip-path: polygon(33% 0%, 66% 0%, 100% 50%, 66% 100%, 33% 100%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+      	clip-path: polygon(33% 0%, 66% 0%, 100% 50%, 66% 100%, 33% 100%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+      }
+      .polygon:hover{
+      	background-color: aquamarine;
+      	-webkit-clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+      	clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+      }
+      .polygon:active{
+      	background-color: darkmagenta;
+      	-webkit-clip-path: polygon(50% 0%,50% 0%,50% 0%,50% 0%,50% 0%,50% 0%,50% 0%, 0% 100%, 100% 100%);
+      	clip-path: polygon(50% 0%,50% 0%,50% 0%,50% 0%,50% 0%,50% 0%,50% 0%, 0% 100%, 100% 100%);
+      }
+      .polygon-svg {
+      	width: 0;
+      	height: 0;
+      }
 			</style>
 		</section>
 
@@ -108,84 +108,84 @@
 				</hgroup>
 			</div>
 			<style class="code" contenteditable="true">
-			.polygon-animate {
-				position: absolute;
-				width: 200px;
-				height: 200px;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				background-color: crimson;
-				transition:.3s;
-				-webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%);
-				clip-path: polygon(50% 0%, 0% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%);
-				animation:polygon-ani 7s linear infinite;
-				-webkit-animation:polygon-ani 7s linear infinite;
-			}
-			@keyframes polygon-ani{
-				10%{
-					background-color: darkorange;
-					-webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
-					clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
-				}
-				14%{
-					-webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
-					clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
-				}
-				24%{
-					background-color: lemonchiffon;
-					-webkit-clip-path: polygon(100% 38%, 82% 100%, 82% 100%, 18% 100%, 0% 38%, 0% 38%, 0% 38%, 0% 38%, 50% 0%);
-					clip-path: polygon(100% 38%, 82% 100%, 82% 100%, 18% 100%, 0% 38%, 0% 38%, 0% 38%, 0% 38%, 50% 0%);
-				}
-				28%{
-					-webkit-clip-path: polygon(100% 38%, 82% 100%, 82% 100%, 18% 100%, 0% 38%, 0% 38%, 0% 38%, 0% 38%, 50% 0%);
-					clip-path: polygon(100% 38%, 82% 100%, 82% 100%, 18% 100%, 0% 38%, 0% 38%, 0% 38%, 0% 38%, 50% 0%);
-				}
-				38%{
-					background-color: darkturquoise;
-					-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%,100% 75%, 50% 100%, 0% 75%, 0% 75%, 0% 25%, 0% 25%);
-					clip-path: polygon(50% 0%, 100% 25%, 100% 75%,100% 75%, 50% 100%, 0% 75%, 0% 75%, 0% 25%, 0% 25%);
-				}
-				42%{
-					-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%,100% 75%, 50% 100%, 0% 75%, 0% 75%, 0% 25%, 0% 25%);
-					clip-path: polygon(50% 0%, 100% 25%, 100% 75%,100% 75%, 50% 100%, 0% 75%, 0% 75%, 0% 25%, 0% 25%);
-				}
-				52%{
-					background-color: darkcyan;
-					-webkit-clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 25% 100%, 0% 60%, 10% 20%, 50% 0%);
-					clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 25% 100%, 0% 60%, 10% 20%, 50% 0%);
-				}
-				56%{
-					-webkit-clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 25% 100%, 0% 60%, 10% 20%, 50% 0%);
-					clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 25% 100%, 0% 60%, 10% 20%, 50% 0%);
-				}
-				66%{
-					background-color: deepskyblue;
-					-webkit-clip-path: polygon(30% 0%, 70% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-					clip-path: polygon(30% 0%, 70% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-				}
-				70%{
-					-webkit-clip-path: polygon(30% 0%, 70% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-					clip-path: polygon(30% 0%, 70% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-				}
-				80%{
-					background-color: indigo;
-					-webkit-clip-path: polygon(83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%, 50% 0%);
-					clip-path: polygon(83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%, 50% 0%);
-				}
-				84%{
-					-webkit-clip-path: polygon(83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%, 50% 0%);
-					clip-path: polygon(83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%, 50% 0%);
-				}94%{
-					background-color: crimson;
-					-webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%);
-					clip-path: polygon(50% 0%, 0% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%);
-				}
-			}
-			.polygon-animate-svg {
-				width: 0;
-				height: 0;
-			}
+      .polygon-animate {
+      	position: absolute;
+      	width: 200px;
+      	height: 200px;
+      	top: 50%;
+      	left: 50%;
+      	transform: translate(-50%, -50%);
+      	background-color: crimson;
+      	transition:.3s;
+      	-webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%);
+      	clip-path: polygon(50% 0%, 0% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%);
+      	animation:polygon-ani 7s linear infinite;
+      	-webkit-animation:polygon-ani 7s linear infinite;
+      }
+      @keyframes polygon-ani{
+      	10%{
+      		background-color: darkorange;
+      		-webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+      		clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+      	}
+      	14%{
+      		-webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+      		clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+      	}
+      	24%{
+      		background-color: lemonchiffon;
+      		-webkit-clip-path: polygon(100% 38%, 82% 100%, 82% 100%, 18% 100%, 0% 38%, 0% 38%, 0% 38%, 0% 38%, 50% 0%);
+      		clip-path: polygon(100% 38%, 82% 100%, 82% 100%, 18% 100%, 0% 38%, 0% 38%, 0% 38%, 0% 38%, 50% 0%);
+      	}
+      	28%{
+      		-webkit-clip-path: polygon(100% 38%, 82% 100%, 82% 100%, 18% 100%, 0% 38%, 0% 38%, 0% 38%, 0% 38%, 50% 0%);
+      		clip-path: polygon(100% 38%, 82% 100%, 82% 100%, 18% 100%, 0% 38%, 0% 38%, 0% 38%, 0% 38%, 50% 0%);
+      	}
+      	38%{
+      		background-color: darkturquoise;
+      		-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%,100% 75%, 50% 100%, 0% 75%, 0% 75%, 0% 25%, 0% 25%);
+      		clip-path: polygon(50% 0%, 100% 25%, 100% 75%,100% 75%, 50% 100%, 0% 75%, 0% 75%, 0% 25%, 0% 25%);
+      	}
+      	42%{
+      		-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%,100% 75%, 50% 100%, 0% 75%, 0% 75%, 0% 25%, 0% 25%);
+      		clip-path: polygon(50% 0%, 100% 25%, 100% 75%,100% 75%, 50% 100%, 0% 75%, 0% 75%, 0% 25%, 0% 25%);
+      	}
+      	52%{
+      		background-color: darkcyan;
+      		-webkit-clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 25% 100%, 0% 60%, 10% 20%, 50% 0%);
+      		clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 25% 100%, 0% 60%, 10% 20%, 50% 0%);
+      	}
+      	56%{
+      		-webkit-clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 25% 100%, 0% 60%, 10% 20%, 50% 0%);
+      		clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 25% 100%, 0% 60%, 10% 20%, 50% 0%);
+      	}
+      	66%{
+      		background-color: deepskyblue;
+      		-webkit-clip-path: polygon(30% 0%, 70% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+      		clip-path: polygon(30% 0%, 70% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+      	}
+      	70%{
+      		-webkit-clip-path: polygon(30% 0%, 70% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+      		clip-path: polygon(30% 0%, 70% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+      	}
+      	80%{
+      		background-color: indigo;
+      		-webkit-clip-path: polygon(83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%, 50% 0%);
+      		clip-path: polygon(83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%, 50% 0%);
+      	}
+      	84%{
+      		-webkit-clip-path: polygon(83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%, 50% 0%);
+      		clip-path: polygon(83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%, 50% 0%);
+      	}94%{
+      		background-color: crimson;
+      		-webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%);
+      		clip-path: polygon(50% 0%, 0% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%);
+      	}
+      }
+      .polygon-animate-svg {
+      	width: 0;
+      	height: 0;
+      }
 			</style>
 		</section>
 
@@ -198,21 +198,21 @@
 				</hgroup>
 			</div>
 			<style class="code" contenteditable="true">
-			.arrow {
-				position: absolute;
-				width: 200px;
-				height: 200px;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				background-color: darkorchid;
-				-webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
-				clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
-			}
-			.arrow-svg {
-				width: 0;
-				height: 0;
-			}
+      .arrow {
+      	position: absolute;
+      	width: 200px;
+      	height: 200px;
+      	top: 50%;
+      	left: 50%;
+      	transform: translate(-50%, -50%);
+      	background-color: darkorchid;
+      	-webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+      	clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+      }
+      .arrow-svg {
+      	width: 0;
+      	height: 0;
+      }
 			</style>
 		</section>
 
@@ -225,21 +225,21 @@
 				</hgroup>
 			</div>
 			<style class="code" contenteditable="true">
-			.close {
-				position: absolute;
-				width: 200px;
-				height: 200px;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				background-color: gainsboro;
-				-webkit-clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
-				clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
-			}
-			.close-svg {
-				width: 0;
-				height: 0;
-			}
+      .close {
+      	position: absolute;
+      	width: 200px;
+      	height: 200px;
+      	top: 50%;
+      	left: 50%;
+      	transform: translate(-50%, -50%);
+      	background-color: gainsboro;
+      	-webkit-clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+      	clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+      }
+      .close-svg {
+      	width: 0;
+      	height: 0;
+      }
 			</style>
 		</section>
 
@@ -252,20 +252,20 @@
 				</hgroup>
 			</div>
 			<style class="code" contenteditable="true">
-			.star {
-				position: absolute;
-				width: 200px;
-				height: 200px;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				background-color: gold;
-				-webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-				clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);			}
-			.star-svg {
-				width: 0;
-				height: 0;
-			}
+      .star {
+      	position: absolute;
+      	width: 200px;
+      	height: 200px;
+      	top: 50%;
+      	left: 50%;
+      	transform: translate(-50%, -50%);
+      	background-color: gold;
+      	-webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+      	clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);			}
+      .star-svg {
+      	width: 0;
+      	height: 0;
+      }
 			</style>
 		</section>
 
@@ -282,96 +282,96 @@
 				</hgroup>
 			</div>
 			<style class="code" contenteditable="true">
-			.triangle2rect {
-				position: absolute;
-				width: 100px;
-				height: 100px;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				-webkit-animation:aniContainer 2s infinite alternate;
-			}
-			.triangle2rect div{
-			  position:absolute;
-			  top:0;
-			  left:0;
-			  width:100%;
-			  height:100%;
-			}
-			.a{
-			  background:deeppink;
-			  -webkit-clip-path: polygon(0% 0%, 0% 100%, 50% 50%);
-			  animation:a 2s infinite alternate;
-			  -webkit-animation:a 2s infinite alternate;
-			}
-			.b{
-			  background:deeppink;
-			  -webkit-clip-path: polygon(0% 0%, 100% 0%, 50% 50%);
-			  animation:b 2s infinite alternate;
-			  -webkit-animation:b 2s infinite alternate;
-			}
-			.c{
-			  background:deeppink;
-			  -webkit-clip-path: polygon(100% 0%, 100% 100%, 50% 50%);
-			  animation:c 2s infinite alternate;
-			  -webkit-animation:c 2s infinite alternate;
-			}
-			.d{
-			  background:deeppink;
-			  -webkit-clip-path: polygon(100% 100%, 0% 100%, 50% 50%);
-			  animation:d 2s infinite alternate;
-			  -webkit-animation:d 2s infinite alternate;
-			}
-			@-webkit-keyframes a{
-			  0%,10%{
-			    background:deeppink;
-			    -webkit-clip-path: polygon(0% 0%, 0% 100%, 50% 50%);
-			  }
-			  90%,100%{
-			    background:#069;
-			    -webkit-clip-path: polygon(0% 100%, 25% 100%, 12.5% 0%);
-			  }
-			}
-			@-webkit-keyframes b{
-			  0%,10%{
-			    background:deeppink;
-			    -webkit-clip-path: polygon(0% 0%, 100% 0%, 50% 50%);
-			  }
-			  90%,100%{
-			    background:#095;
-			    -webkit-clip-path: polygon(25% 0%, 50%  0%,37.5% 100%);
-			  }
-			}
-			@-webkit-keyframes c{
-			  0%,10%{
-			    background:deeppink;
-			    -webkit-clip-path: polygon(100% 0%, 100% 100%, 50% 50%);
-			  }
-			  90%,100%{
-			    background:#f80;
-			    -webkit-clip-path: polygon(62.5% 0%,75% 100%,50% 100%);
-			  }
-			}
-			@-webkit-keyframes d{
-			  0%,10%{
-			    background:deeppink;
-			    -webkit-clip-path: polygon(100% 100%, 0% 100%, 50% 50%);
-			  }
-			  90%,100%{
-			    background:#f69;
-			    -webkit-clip-path: polygon(100% 0%,87.5% 100%, 75% 0%);
-			  }
-			}
-			@-webkit-keyframes aniContainer{
-			  0%,10%{
-			    width:100px;
-			    height:100px;
-			  }
-			  90%,100%{
-			    width:250px;
-			    height:60px;
-			  }
-			}
+      .triangle2rect {
+      	position: absolute;
+      	width: 100px;
+      	height: 100px;
+      	top: 50%;
+      	left: 50%;
+      	transform: translate(-50%, -50%);
+      	-webkit-animation:aniContainer 2s infinite alternate;
+      }
+      .triangle2rect div{
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+      }
+      .a{
+        background:deeppink;
+        -webkit-clip-path: polygon(0% 0%, 0% 100%, 50% 50%);
+        animation:a 2s infinite alternate;
+        -webkit-animation:a 2s infinite alternate;
+      }
+      .b{
+        background:deeppink;
+        -webkit-clip-path: polygon(0% 0%, 100% 0%, 50% 50%);
+        animation:b 2s infinite alternate;
+        -webkit-animation:b 2s infinite alternate;
+      }
+      .c{
+        background:deeppink;
+        -webkit-clip-path: polygon(100% 0%, 100% 100%, 50% 50%);
+        animation:c 2s infinite alternate;
+        -webkit-animation:c 2s infinite alternate;
+      }
+      .d{
+        background:deeppink;
+        -webkit-clip-path: polygon(100% 100%, 0% 100%, 50% 50%);
+        animation:d 2s infinite alternate;
+        -webkit-animation:d 2s infinite alternate;
+      }
+      @-webkit-keyframes a{
+        0%,10%{
+          background:deeppink;
+          -webkit-clip-path: polygon(0% 0%, 0% 100%, 50% 50%);
+        }
+        90%,100%{
+          background:#069;
+          -webkit-clip-path: polygon(0% 100%, 25% 100%, 12.5% 0%);
+        }
+      }
+      @-webkit-keyframes b{
+        0%,10%{
+          background:deeppink;
+          -webkit-clip-path: polygon(0% 0%, 100% 0%, 50% 50%);
+        }
+        90%,100%{
+          background:#095;
+          -webkit-clip-path: polygon(25% 0%, 50%  0%,37.5% 100%);
+        }
+      }
+      @-webkit-keyframes c{
+        0%,10%{
+          background:deeppink;
+          -webkit-clip-path: polygon(100% 0%, 100% 100%, 50% 50%);
+        }
+        90%,100%{
+          background:#f80;
+          -webkit-clip-path: polygon(62.5% 0%,75% 100%,50% 100%);
+        }
+      }
+      @-webkit-keyframes d{
+        0%,10%{
+          background:deeppink;
+          -webkit-clip-path: polygon(100% 100%, 0% 100%, 50% 50%);
+        }
+        90%,100%{
+          background:#f69;
+          -webkit-clip-path: polygon(100% 0%,87.5% 100%, 75% 0%);
+        }
+      }
+      @-webkit-keyframes aniContainer{
+        0%,10%{
+          width:100px;
+          height:100px;
+        }
+        90%,100%{
+          width:250px;
+          height:60px;
+        }
+      }
 			</style>
 		</section>
 
@@ -387,14 +387,14 @@
 				</hgroup>
 			</div>
 			<style class="code" contenteditable="true">
-			.circle-load-rect {
-				position: absolute;
-				width: 200px;
-				height: 200px;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-			}
+      .circle-load-rect {
+      	position: absolute;
+      	width: 200px;
+      	height: 200px;
+      	top: 50%;
+      	left: 50%;
+      	transform: translate(-50%, -50%);
+      }
 			</style>
 		</section>
 
@@ -411,14 +411,14 @@
 				</hgroup>
 			</div>
 			<style class="code" contenteditable="true">
-			.circle-load-q {
-				position: absolute;
-				width: 200px;
-				height: 200px;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-			}
+      .circle-load-q {
+      	position: absolute;
+      	width: 200px;
+      	height: 200px;
+      	top: 50%;
+      	left: 50%;
+      	transform: translate(-50%, -50%);
+      }
 			</style>
 		</section>
 
@@ -435,14 +435,14 @@
 				</hgroup>
 			</div>
 			<style class="code" contenteditable="true">
-			.circle-load-s {
-				position: absolute;
-				width: 200px;
-				height: 200px;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-			}
+      .circle-load-s {
+      	position: absolute;
+      	width: 200px;
+      	height: 200px;
+      	top: 50%;
+      	left: 50%;
+      	transform: translate(-50%, -50%);
+      }
 			</style>
 		</section>
 
@@ -468,22 +468,22 @@
 				</hgroup>
 			</div>
 			<style class="code" contenteditable="true">
-			.circle-word {
-				position: absolute;
-				width: 400px;
-				height: 200px;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-			}
-			.textCircle{
-				font-size:20px;
-				letter-spacing:4px;
-			}
-			.textCircle2{
-				font-size:12px;
-				letter-spacing:1px;
-			}
+      .circle-word {
+      	position: absolute;
+      	width: 400px;
+      	height: 200px;
+      	top: 50%;
+      	left: 50%;
+      	transform: translate(-50%, -50%);
+      }
+      .textCircle{
+      	font-size:20px;
+      	letter-spacing:4px;
+      }
+      .textCircle2{
+      	font-size:12px;
+      	letter-spacing:1px;
+      }
 			</style>
 		</section>
 
@@ -556,22 +556,22 @@
 				</hgroup>
 			</div>
 			<style class="code" contenteditable="true">
-			.svg-word-glitch {
-				position: absolute;
-				width: 600px;
-				height: 200px;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-			}
-			.word-glitch{
-				fill: black;
-				filter: url(#filter);
-				font-family: Raleway, Verdana, sans-serif, 微軟正黑體, 微软雅黑, serif, 'Droid Serif', 'Helvetica Neue', Helvetica, Arial;;
-				font-size: 80px;
-				-webkit-font-smoothing: antialiased;
-				-moz-osx-font-smoothing: grayscale;
-			}
+      .svg-word-glitch {
+      	position: absolute;
+      	width: 600px;
+      	height: 200px;
+      	top: 50%;
+      	left: 50%;
+      	transform: translate(-50%, -50%);
+      }
+      .word-glitch{
+      	fill: black;
+      	filter: url(#filter);
+      	font-family: Raleway, Verdana, sans-serif, 微軟正黑體, 微软雅黑, serif, 'Droid Serif', 'Helvetica Neue', Helvetica, Arial;;
+      	font-size: 80px;
+      	-webkit-font-smoothing: antialiased;
+      	-moz-osx-font-smoothing: grayscale;
+      }
 			</style>
 		</section>
 
@@ -588,24 +588,24 @@
 				</hgroup>
 			</div>
 			<style class="code" contenteditable="true">
-			.circle-load {
-				position: absolute;
-				width: 200px;
-				height: 200px;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-			}
-			.circle-load-svg {
-				stroke-dasharray: 0 570;
-				animation:rot 8s linear infinite;
-			}
+      .circle-load {
+      	position: absolute;
+      	width: 200px;
+      	height: 200px;
+      	top: 50%;
+      	left: 50%;
+      	transform: translate(-50%, -50%);
+      }
+      .circle-load-svg {
+      	stroke-dasharray: 0 570;
+      	animation:rot 8s linear infinite;
+      }
 
-			@keyframes rot{
-				100%{
-					stroke-dasharray: 570 570;
-				}
-			}
+      @keyframes rot{
+      	100%{
+      		stroke-dasharray: 570 570;
+      	}
+      }
 			</style>
 		</section>
 
@@ -753,14 +753,14 @@
 				</hgroup>
 			</div>
 			<style class="code" contenteditable="true">
-			.percentage-pie {
-				position: absolute;
-				width: 200px;
-				height: 200px;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-			}
+      .percentage-pie {
+      	position: absolute;
+      	width: 200px;
+      	height: 200px;
+      	top: 50%;
+      	left: 50%;
+      	transform: translate(-50%, -50%);
+      }
 			</style>
 		</section>
 
@@ -778,13 +778,6 @@
 									fill="rgba(170, 125, 57, .8)"
 									d="M5 100 C90 28, 92 179, 195 100 A95 95 0 0 1 5 100 Z" transform="translate(0,0)">
 									<!-- d="M5 100 C90 28, 92 179, 195 100 A95 95 0 0 1 5 100 Z" > -->
-<!-- 							<animate dur="5s"
-									repeatCount="indefinite"
-									attributeName="d"
-									attributeType="XML"
-									values="M5 100 C90 28, 92 179, 195 100 A95 95 0 0 1 5 100 Z;
-													M12.868617831145684 147.74344 C 67.6228726103819 127.74343999999999 , 122.37712738961812 167.74344 , 177.13138216885432 147.74344 A 95 95 0 0 1 12.868617831145684 147.74344 Z;
-													M5 100 C90 28, 92 179, 195 100 A95 95 0 0 1 5 100 Z" /> -->
 						</path>
 						<circle cx="100" cy="100" r="90" stroke-width="20" stroke="white" fill="transparent"></circle>
 						<circle cx="100" cy="100" r="90" stroke-width="10" stroke="rgb(212, 171, 106)" fill="none" class='percentage-pie2-svg'></circle>
@@ -872,6 +865,143 @@
       });
 			</script>
 		</section>
+
+		<!-- 使用 SVG 绘制莲花图 -->
+		<section id="lotus" class="code-wrap cf">
+			<div class="css-live-wrap">
+				<summary>使用 SVG 绘制莲花图</summary>
+				<summary>使用审查元素看看 html 结构，绘画内容在 svg 标签内</summary>
+				<hgroup class="lotus">
+					<svg  viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+						<defs>
+						  <path d="M100 10Q150 50,100 100Q50 50,100 10Z" id="petal"/>
+            </defs>
+            <g class="svg-lotus">
+              <animateTransform dur="10s" attributeName="transform" repeatCount="indefinite" type="rotate" from="0,100,100" to="360,100,100"/>
+            </g>
+					</svg>
+				</hgroup>
+			</div>
+			<style class="code" contenteditable="true" style="display:none">
+			.lotus {
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			</style>
+			<script class="jscode" contenteditable="true">
+      (function() {
+      	for (var i = 0; i < 360; i += 22.5) {
+          // 创建 <use> 标签
+      	  var useElement = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+
+          // 创建命名空间
+      	  useElement.setAttributeNS('http://www.w3.org/1999/xlink', 'href', '#petal');
+      	  useElement.setAttribute('fill', 'hsla(' + i + ', 62%, 80%, .35)');
+      	  useElement.setAttribute('transform', 'rotate(' + i + ' 100 100)');
+
+          // 插入 <use>
+      	  document.querySelector('.svg-lotus').appendChild(useElement);
+      	}
+      })();
+			</script>
+		</section>
+
+    <!-- 使用 SVG 绘制风车 -->
+    <section id="windmill" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>使用 SVG 绘制风车</summary>
+        <summary>使用审查元素看看 html 结构，绘画内容在 svg 标签内</summary>
+        <hgroup class="windmill">
+          <svg  viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <path d="M100 10Q150 50,100 100Z" id="windm"/>
+            </defs>
+            <g class="svg-windmill">
+              <animateTransform dur="10s" attributeName="transform" repeatCount="indefinite" type="rotate" from="0,100,100" to="360,100,100"/>
+            </g>
+          </svg>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable="true" style="display:none">
+      .windmill {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      </style>
+      <script class="jscode" contenteditable="true">
+      (function() {
+        for (var i = 0; i < 360; i += 30) {
+          // 创建 <use> 标签
+          var useElement = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+
+          // 创建命名空间
+          useElement.setAttributeNS('http://www.w3.org/1999/xlink', 'href', '#windm');
+          useElement.setAttribute('fill', 'hsla(200, 30%, 60%, .5)');
+          useElement.setAttribute('transform', 'rotate(' + i + ' 100 100)');
+
+          // 插入 <use>
+          document.querySelector('.svg-windmill').appendChild(useElement);
+        }
+      })();
+      </script>
+    </section>
+
+    <!-- 使用 SVG 绘制 360 极速浏览器图标 -->
+    <section id="sixSpeed" class="code-wrap cf">
+      <div class="css-live-wrap">
+        <summary>使用 SVG 绘制 360 极速浏览器图标</summary>
+        <summary>使用审查元素看看 html 结构，绘画内容在 svg 标签内</summary>
+        <hgroup class="sixSpeed">
+          <svg class="svg-sixSpeed" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <path d="M120 10Q78 39,100 100C15 88, 19 3, 120 10Z" id="speed"/>
+              <circle cx="95" cy="95" r="10"  fill="white" id='icon-center'></circle>
+            </defs>
+          </svg>
+        </hgroup>
+      </div>
+      <style class="code" contenteditable="true" style="display:none">
+      .sixSpeed {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      </style>
+      <script class="jscode" contenteditable="true">
+      (function() {
+        var color = ['#C538F5','#F44018','#F7EA09','#2BD067','#4192F4'],
+          j = 0;
+
+        for (var i = 40; i < 400; i += 72) {
+          // 创建 <use> 标签
+          var useElement = document.createElementNS('http://www.w3.org/2000/svg', 'use'),
+            centerElement = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+
+          // 创建命名空间
+          useElement.setAttributeNS('http://www.w3.org/1999/xlink', 'href', '#speed');
+          useElement.setAttribute('fill', color[j++]);
+          useElement.setAttribute('transform', 'rotate(' + i + ' 95 95)');
+
+          centerElement.setAttributeNS('http://www.w3.org/1999/xlink', 'href', '#icon-center');
+
+          // 插入 <use>
+          document.querySelector('.svg-sixSpeed').appendChild(useElement);
+          document.querySelector('.svg-sixSpeed').appendChild(centerElement);
+        }
+      })();
+      </script>
+    </section>
 	</div>
 
 	<div id="tips">
