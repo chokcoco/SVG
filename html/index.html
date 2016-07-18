@@ -769,24 +769,23 @@
 			<div class="css-live-wrap">
 				<summary>使用 SVG 绘制可调节数值百分比图</summary>
 				<summary>使用审查元素看看 html 结构，绘画内容在 svg 标签内</summary>
-				<summary>使用原生JS控制svg百分比，并生成动画(未完成)</summary>
+				<summary>使用原生JS控制svg百分比，并生成动画，刷新页面观看动画</summary>
 				<hgroup class="percentage-pie2">
 					<svg width="200px" height="200px" version="1.1" xmlns="http://www.w3.org/2000/svg">
-						<!-- <text class="liquidFillGaugeText" text-anchor="middle" font-size="42px" transform="translate(100,120)" style="fill: #000">50.0%</text> -->
+						<text id="liquidFillGaugeText" text-anchor="middle" font-size="42px" transform="translate(100,120)" style="fill: #000">50.0%</text>
 						<!-- Wave -->
-						<path id="wave-2"
-									fill="rgb(170, 125, 57)"
+						<path id="waveMove"
+									fill="rgba(170, 125, 57, .8)"
 									d="M5 100 C90 28, 92 179, 195 100 A95 95 0 0 1 5 100 Z" transform="translate(0,0)">
 									<!-- d="M5 100 C90 28, 92 179, 195 100 A95 95 0 0 1 5 100 Z" > -->
-							<animate dur="5s"
+<!-- 							<animate dur="5s"
 									repeatCount="indefinite"
 									attributeName="d"
 									attributeType="XML"
 									values="M5 100 C90 28, 92 179, 195 100 A95 95 0 0 1 5 100 Z;
 													M12.868617831145684 147.74344 C 67.6228726103819 127.74343999999999 , 122.37712738961812 167.74344 , 177.13138216885432 147.74344 A 95 95 0 0 1 12.868617831145684 147.74344 Z;
-													M5 100 C90 28, 92 179, 195 100 A95 95 0 0 1 5 100 Z" />
+													M5 100 C90 28, 92 179, 195 100 A95 95 0 0 1 5 100 Z" /> -->
 						</path>
-
 						<circle cx="100" cy="100" r="90" stroke-width="20" stroke="white" fill="transparent"></circle>
 						<circle cx="100" cy="100" r="90" stroke-width="10" stroke="rgb(212, 171, 106)" fill="none" class='percentage-pie2-svg'></circle>
 					</svg>
@@ -805,11 +804,11 @@
 			<script class="jscode" contenteditable="true">
       var
       // 圆半径
-        r = 95,
-        // 圆心 x
-        cx = 100,
-        // 圆心 y
-        cy = 100;
+      	r = 90,
+      	// 圆心 x
+      	cx = 100,
+      	// 圆心 y
+      	cy = 100;
 
       /**
        * 圆的标准方程
@@ -821,47 +820,56 @@
        */
 
       var randomY = ~~(Math.random() * 19000) / 100,
-        // 初始Y值
-        startY = 100,
-        // 与原距离差值
-        offsetY = startY - randomY,
-        // 运动时间
-        duration = 2000,
-        // 当前时间
-        startTime = new Date(),
-        // svg elem
-        svgElem = document.getElementById('wave-2');
+      	// 初始Y值
+      	startY = 100,
+      	// 与原距离差值
+      	offsetY = startY - randomY,
+      	// 运动时间
+      	duration = 3000,
+      	// 当前时间
+      	startTime = new Date(),
+      	// svg elem
+      	svgElem = document.getElementById('waveMove'),
+      	// 百分比
+      	svgText = document.getElementById('liquidFillGaugeText'),
+      	// 是否大于180度
+      	isOver180 = offsetY < 0 ? 1 : 0;
 
-      console.log(svgElem);
-      console.log('randomY', randomY);
-      console.log('offsetY', offsetY);
+      // console.log(svgElem);
+      // console.log('randomY', randomY);
+      // console.log('offsetY', offsetY);
       requestAnimationFrame(function waveAni() {
-        // 当前时间线
-        var t = Math.min(1, (Date.now() - startTime) / duration);
+      	// 当前时间线
+      	var t = Math.min(1, (Date.now() - startTime) / duration);
 
-        randomY = startY + (t * offsetY);
+      	randomY = startY + (t * offsetY);
 
-        var x1 = Math.sqrt(95 * 95 - (randomY - 100) * (randomY - 100)) + 95,
-          x2 = 95 - Math.sqrt(95 * 95 - (randomY - 100) * (randomY - 100)),
-          xGap = (x1 - x2) / 3,
-          yGap = 20;
+      	var
+      	// 圆弧起始点 x 坐标
+      		x1 = Math.sqrt(r * r - (randomY - cy) * (randomY - cy)) + r,
+      		// 圆弧终点 x 坐标
+      		x2 = r - Math.sqrt(r * r - (randomY - cy) * (randomY - cy)),
+      		// 设定三次贝塞尔曲线参数
+      		xGap = (x1 - x2) / 3,
+      		// 波浪幅度
+      		yGap = 30;
 
-        // console.log('t',t);
-        // console.log('randomY',randomY);
-        // console.log('x1 x2',x1,x2);
-        // console.log('xGap',xGap);
-        // console.log('yGap',yGap);
+      	// console.log('t',t);
+      	// console.log('randomY',randomY);
+      	// console.log('x1 x2',x1,x2);
+      	// console.log('xGap',xGap);
+      	// console.log('yGap',yGap);
 
-        // 动画移动路径
-        // console.log('M',x2,randomY,'C',x2+xGap,randomY-yGap,',',x2+xGap+xGap,randomY+yGap,',',x1,randomY,'A',r,r,'0 0 1',x2,randomY,'Z');
-        var path = 'M ' + x2 + ' ' + randomY + ' C ' + (x2 + xGap) + ' ' + (randomY - yGap) + ' , ' + (x2 + xGap + xGap) + ' ' + (randomY + yGap) + ' , ' + x1 + ' ' + randomY + ' A ' + r + ' ' + r + ' ' + '0 0 1' + ' ' + x2 + ' ' + randomY + ' Z';
-        console.log(path);
+      	// 动画移动路径
+      	// console.log('M',x2,randomY,'C',x2+xGap,randomY-yGap,',',x2+xGap+xGap,randomY+yGap,',',x1,randomY,'A',r,r,'0 0 1',x2,randomY,'Z');
+      	var path = 'M ' + x2 + ' ' + randomY + ' C ' + (x2 + xGap) + ' ' + (randomY - yGap) + ' , ' + (x2 + xGap + xGap) + ' ' + (randomY + yGap) + ' , ' + x1 + ' ' + randomY + ' A ' + r + ' ' + r + ' ' + '0 ' + isOver180 + ' 1' + ' ' + x2 + ' ' + randomY + ' Z';
 
-        // 无法控制，另寻他法中
-        // svgElem.setAttribute('d', path);
-
-        if (t < 1.0) requestAnimationFrame(waveAni);
-      })
+      	// 使用 setAttribute 动态添加移动路径
+      	svgElem.setAttribute('d', path);
+      	// 修改百分比值
+      	svgText.firstChild.nodeValue = ~~((190 - randomY) / 190 * 10000) / 100 + "%";
+      	if (t < 1.0) requestAnimationFrame(waveAni);
+      });
 			</script>
 		</section>
 	</div>
@@ -872,8 +880,7 @@
 	<script type="text/javascript">
 		var cnzz_protocol = (("https: " == document.location.protocol) ? " https://":" http://");
 		document.write(unescape("%3Cspan id='cnzz_stat_icon_1259441963'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1259441963'type='text/javascript'%3E%3C/script%3E"));
-	</script>
-	<script type="text/javascript">
+		// 低版本IE弹出层关闭
 		var
 			elem = document.getElementById('tips'),
 			ngua = navigator.userAgent,
@@ -888,5 +895,6 @@
 			});
 		}
 	</script>
+
 </body>
 </html>
