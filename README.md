@@ -21,5 +21,7 @@
 #### 百分比图
 ![百分比图](https://github.com/chokcoco/SVG/blob/master/static/images/3.gif)
 
+![百分比图](https://github.com/chokcoco/SVG/blob/master/static/images/4.gif)
+
 ## License
 MIT
